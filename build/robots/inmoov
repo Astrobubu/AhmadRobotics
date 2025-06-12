@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en" class="bg-zinc-950 text-zinc-200 scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <title>InMoov – R&amp;D Testbed – Ahmed Robotics</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { theme:{ extend:{ colors:{ brand:'#00e0ff' } } } }</script>
+</head>
+<body class="font-sans">
+  <!-- Header -->
+  <header class="bg-zinc-900/90 backdrop-blur sticky top-0 z-50">
+    <div class="mx-auto max-w-7xl flex items-center justify-between px-6 py-4">
+      <a href="/" class="text-brand text-2xl font-extrabold drop-shadow-md">Ahmad&nbsp;Robotics</a>
+      <nav class="space-x-6 text-sm">
+        <a href="/about"   class="hover:text-brand">About</a>
+        <a href="/contact" class="hover:text-brand">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+<section class="py-14">
+  <div class="mx-auto max-w-6xl grid gap-10 lg:grid-cols-2 px-6">
+    <!-- Hero image -->
+    <img src="/static/img/robots/inmoov/01.jpg"
+         alt="InMoov – R&amp;D Testbed"
+         class="rounded-lg shadow-lg" />
+
+    <!-- Text -->
+    <div>
+      <h2 class="text-3xl font-bold text-brand">InMoov – R&amp;D Testbed</h2>
+      <p class="mt-2 text-zinc-400">3-D-printed humanoid for Education</p>
+      <p class="mt-4"><strong>Status:</strong> Active – Zayed Educational Complex, Al-Mizhar</p>
+      <div class="prose prose-invert max-w-none mt-6" >
+<p>Our printable humanoid lets students start their robot programming journey without fear.</p>
+<ul class="list-disc ml-6">
+  <li>20 Heavy duty Servos.</li>
+  <li>Printed on Snapmaker Luban with PETG-White.</li>
+  <li>Fully moveable fingers and arms.</li>
+</ul>
+        </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="py-10 bg-zinc-900/40">
+  <h3 class="text-center text-2xl font-semibold mb-8">Gallery</h3>
+  <div class="mx-auto max-w-5xl grid gap-4 sm:grid-cols-2 lg:grid-cols-3 px-4">
+    
+      <img src="/static/img/robots/inmoov/01.jpg"
+           alt=""
+           class="rounded-md cursor-pointer hover:opacity-80 lightboxable" />
+    
+      <img src="/static/img/robots/inmoov/02.jpg"
+           alt=""
+           class="rounded-md cursor-pointer hover:opacity-80 lightboxable" />
+    
+      <img src="/static/img/robots/inmoov/03.jpg"
+           alt=""
+           class="rounded-md cursor-pointer hover:opacity-80 lightboxable" />
+    
+      <img src="/static/img/robots/inmoov/04.jpg"
+           alt=""
+           class="rounded-md cursor-pointer hover:opacity-80 lightboxable" />
+    
+      <img src="/static/img/robots/inmoov/05.jpg"
+           alt=""
+           class="rounded-md cursor-pointer hover:opacity-80 lightboxable" />
+    
+      <img src="/static/img/robots/inmoov/06.jpg"
+           alt=""
+           class="rounded-md cursor-pointer hover:opacity-80 lightboxable" />
+    
+  </div>
+
+
+  
+</section>
+
+<div class="text-center my-12">
+  <a href="/" class="text-brand hover:underline">← Back to creations</a>
+</div>
+</main>
+
+  <footer class="text-center py-8 text-xs text-zinc-500">
+    © 2025 Ahmad Hasan&nbsp;· All rights reserved
+  </footer>
+
+  <script src="/static/js/lightbox.js"></script>
+</body>
+</html>
