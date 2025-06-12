@@ -12,10 +12,10 @@
   <!-- Header -->
   <header class="bg-zinc-900/90 backdrop-blur sticky top-0 z-50">
     <div class="mx-auto max-w-7xl flex items-center justify-between px-6 py-4">
-      <a href="/" class="text-brand text-2xl font-extrabold drop-shadow-md">Ahmad&nbsp;Robotics</a>
+      <a href="index.html" class="text-brand text-2xl font-extrabold drop-shadow-md">Ahmad&nbsp;Robotics</a>
       <nav class="space-x-6 text-sm">
-        <a href="/about"   class="hover:text-brand">About</a>
-        <a href="/contact" class="hover:text-brand">Contact</a>
+        <a href="about"   class="hover:text-brand">About</a>
+        <a href="contact" class="hover:text-brand">Contact</a>
       </nav>
     </div>
   </header>
@@ -27,7 +27,7 @@
 
     <!-- ── Ahmad ── -->
     <div class="flex flex-col sm:flex-row gap-8 mb-14">
-      <img src="/static/img/team_ahmed.jpg"
+      <img src="static/img/team_ahmed.jpg"
            class="w-44 h-44 object-cover rounded-full border-4 border-brand/60 mx-auto sm:mx-0">
       <div>
         <h3 class="text-2xl font-semibold">Ahmad Hasan</h3>
@@ -55,7 +55,7 @@
 
     <!-- ── Faisal ── -->
     <div class="flex flex-col sm:flex-row gap-8">
-      <img src="/static/img/team_faisal.jpg"
+      <img src="static/img/team_faisal.jpg"
            class="w-44 h-44 object-cover rounded-full border-4 border-brand/60 mx-auto sm:mx-0">
       <div>
         <h3 class="text-2xl font-semibold">Faisal Al-Saleh</h3>
@@ -76,6 +76,6 @@
     © 2025 Ahmad Hasan&nbsp;· All rights reserved
   </footer>
 
-  <script src="/static/js/lightbox.js"></script>
+  <script src="static/js/lightbox.js"></script>
 </body>
 </html>

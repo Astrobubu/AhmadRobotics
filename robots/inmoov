@@ -12,10 +12,10 @@
   <!-- Header -->
   <header class="bg-zinc-900/90 backdrop-blur sticky top-0 z-50">
     <div class="mx-auto max-w-7xl flex items-center justify-between px-6 py-4">
-      <a href="/" class="text-brand text-2xl font-extrabold drop-shadow-md">Ahmad&nbsp;Robotics</a>
+      <a href="../index.html" class="text-brand text-2xl font-extrabold drop-shadow-md">Ahmad&nbsp;Robotics</a>
       <nav class="space-x-6 text-sm">
-        <a href="/about"   class="hover:text-brand">About</a>
-        <a href="/contact" class="hover:text-brand">Contact</a>
+        <a href="../about"   class="hover:text-brand">About</a>
+        <a href="../contact" class="hover:text-brand">Contact</a>
       </nav>
     </div>
   </header>
@@ -25,7 +25,7 @@
 <section class="py-14">
   <div class="mx-auto max-w-6xl grid gap-10 lg:grid-cols-2 px-6">
     <!-- Hero image -->
-    <img src="/static/img/robots/inmoov/01.jpg"
+    <img src="../static/img/robots/inmoov/01.jpg"
          alt="InMoov – R&amp;D Testbed"
          class="rounded-lg shadow-lg" />
 
@@ -52,27 +52,27 @@
   <h3 class="text-center text-2xl font-semibold mb-8">Gallery</h3>
   <div class="mx-auto max-w-5xl grid gap-4 sm:grid-cols-2 lg:grid-cols-3 px-4">
     
-      <img src="/static/img/robots/inmoov/01.jpg"
+      <img src="../static/img/robots/inmoov/01.jpg"
            alt=""
            class="rounded-md cursor-pointer hover:opacity-80 lightboxable" />
     
-      <img src="/static/img/robots/inmoov/02.jpg"
+      <img src="../static/img/robots/inmoov/02.jpg"
            alt=""
            class="rounded-md cursor-pointer hover:opacity-80 lightboxable" />
     
-      <img src="/static/img/robots/inmoov/03.jpg"
+      <img src="../static/img/robots/inmoov/03.jpg"
            alt=""
            class="rounded-md cursor-pointer hover:opacity-80 lightboxable" />
     
-      <img src="/static/img/robots/inmoov/04.jpg"
+      <img src="../static/img/robots/inmoov/04.jpg"
            alt=""
            class="rounded-md cursor-pointer hover:opacity-80 lightboxable" />
     
-      <img src="/static/img/robots/inmoov/05.jpg"
+      <img src="../static/img/robots/inmoov/05.jpg"
            alt=""
            class="rounded-md cursor-pointer hover:opacity-80 lightboxable" />
     
-      <img src="/static/img/robots/inmoov/06.jpg"
+      <img src="../static/img/robots/inmoov/06.jpg"
            alt=""
            class="rounded-md cursor-pointer hover:opacity-80 lightboxable" />
     
@@ -83,7 +83,7 @@
 </section>
 
 <div class="text-center my-12">
-  <a href="/" class="text-brand hover:underline">← Back to creations</a>
+  <a href="../index.html" class="text-brand hover:underline">← Back to creations</a>
 </div>
 </main>
 
@@ -91,6 +91,6 @@
     © 2025 Ahmad Hasan&nbsp;· All rights reserved
   </footer>
 
-  <script src="/static/js/lightbox.js"></script>
+  <script src="../static/js/lightbox.js"></script>
 </body>
 </html>
