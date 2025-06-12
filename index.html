@@ -1,8 +1,13 @@
 <!doctype html>
 <html lang="en" class="bg-zinc-950 text-zinc-200 scroll-smooth">
 <head>
+
   <meta charset="utf-8" />
-  <title>Ahmed Robotics – Our Creations</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />  <!-- NEW -->
+  <link rel="icon" href="static/img/favicon.ico">
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <title>Ahmed Robotics</title>
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -10,22 +15,55 @@
 </head>
 <body class="font-sans">
   <!-- Header -->
-  <header class="bg-zinc-900/90 backdrop-blur sticky top-0 z-50">
-    <div class="mx-auto max-w-7xl flex items-center justify-between px-6 py-4">
-      <a href="index.html" class="text-brand text-2xl font-extrabold drop-shadow-md">Ahmad&nbsp;Robotics</a>
-      <nav class="space-x-6 text-sm">
-        <a href="about/index.html"   class="hover:text-brand">About</a>
-        <a href="contact/index.html" class="hover:text-brand">Contact</a>
-      </nav>
-    </div>
-  </header>
+<header class="bg-zinc-900/90 backdrop-blur sticky top-0 z-50"
+        x-data="{ open:false }">                                     <!-- Alpine state -->
+  <div class="mx-auto max-w-7xl flex items-center justify-between px-6 py-4">
+
+    <!-- logo icon only -->
+    <a href="index.html">
+      <img src="static/img/logo.png"
+           alt="Ahmad Robotics"
+           class="h-10 w-10">
+
+    </a>
+       <span class="text-brand text-2xl font-bold drop-shadow-md">
+        Ahmad&nbsp;Robotics
+      </span>
+    <!-- hamburger button -->
+    <button @click="open=!open"
+            class="sm:hidden text-brand focus:outline-none"
+            aria-label="Toggle navigation">
+      <!-- 3-bar icon -->
+      <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2"
+           viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+    <!-- desktop nav -->
+    <nav class="hidden sm:flex space-x-6 text-sm">
+      <a href="about/index.html"   class="hover:text-brand">About</a>
+      <a href="contact/index.html" class="hover:text-brand">Contact</a>
+    </nav>
+  </div>
+
+  <!-- mobile menu -->
+  <nav x-show="open"
+       x-transition.opacity.duration.200ms
+       class="sm:hidden bg-zinc-900/95 backdrop-blur px-6 pb-4 space-y-2 text-sm">
+    <a href="about/index.html"   class="block py-2 border-b border-zinc-800 hover:text-brand">About</a>
+    <a href="contact/index.html" class="block py-2 hover:text-brand">Contact</a>
+  </nav>
+</header>
+
 
   <main>
 <!-- ARK-1 HERO -->
 <section class="bg-zinc-900">
-  <div class="mx-auto max-w-7xl grid lg:grid-cols-2 gap-10 px-6 py-20">
+ <div class="mx-auto max-w-7xl grid gap-10 lg:grid-cols-2 px-6 py-16"> 
     <img id="mainpic" src="static/img/robots/ark1-gideas/01.jpg"
-         class="rounded-xl shadow-2xl" alt="ARK-1 Gideas">
+         class="w-full h-auto rounded-xl shadow-2xl" alt="ARK-1 Gideas">
 
     <div class="flex flex-col justify-center">
       <h1 class="text-4xl font-bold text-brand mb-4">ARK-1 Gideas</h1>
@@ -98,7 +136,7 @@
 
 
   <h2 class="text-center text-2xl font-semibold mb-8">Showreel</h2>
-  <div class="mx-auto max-w-6xl columns-2 sm:columns-3 md:columns-4 gap-4 px-4">
+  <div class="mx-auto max-w-6xl columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 px-4">
     
       
         <img src="static/img/robots/ark1-gideas/01.jpg"
@@ -198,7 +236,7 @@
 <!-- Team -->
 <section class="py-16 bg-zinc-900/60">
   <h2 class="text-center text-3xl font-bold text-brand mb-10">Meet the Team</h2>
-<div class="flex flex-wrap justify-center gap-12 text-center">
+<div class="flex flex-wrap justify-center gap-12 text-center max-w-5xl mx-auto px-6">
     <div class="text-center">
       <img style="display: inline;" src="static/img/team_ahmed.jpg"
            alt="Ahmed Hassan"
