@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en" class="bg-zinc-950 text-zinc-200 scroll-smooth">
+<head>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />  <!-- NEW -->
+  <link rel="icon" href="../../static/img/favicon.ico">
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <title>GuideOne – Ahmed Robotics</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { theme:{ extend:{ colors:{ brand:'#00e0ff' } } } }</script>
+</head>
+<body class="font-sans">
+  <!-- Header -->
+<header class="bg-zinc-900/90 backdrop-blur sticky top-0 z-50"
+        x-data="{ open:false }">                                     <!-- Alpine state -->
+  <div class="mx-auto max-w-7xl flex items-center justify-between px-6 py-4">
+
+    <!-- logo icon only -->
+    <a href="../../index.html">
+      <img src="../../static/img/logo.png"
+           alt="Ahmad Robotics"
+           class="h-10 w-10">
+
+    </a>
+       <span class="text-brand text-2xl font-bold drop-shadow-md">
+        Ahmad&nbsp;Robotics
+      </span>
+    <!-- hamburger button -->
+    <button @click="open=!open"
+            class="sm:hidden text-brand focus:outline-none"
+            aria-label="Toggle navigation">
+      <!-- 3-bar icon -->
+      <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2"
+           viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+    <!-- desktop nav -->
+    <nav class="hidden sm:flex space-x-6 text-sm">
+      <a href="../../about/index.html"   class="hover:text-brand">About</a>
+      <a href="../../contact/index.html" class="hover:text-brand">Contact</a>
+    </nav>
+  </div>
+
+  <!-- mobile menu -->
+  <nav x-show="open"
+       x-transition.opacity.duration.200ms
+       class="sm:hidden bg-zinc-900/95 backdrop-blur px-6 pb-4 space-y-2 text-sm">
+    <a href="../../about/index.html"   class="block py-2 border-b border-zinc-800 hover:text-brand">About</a>
+    <a href="../../contact/index.html" class="block py-2 hover:text-brand">Contact</a>
+  </nav>
+</header>
+
+
+  <main>
+
+<section>
+  <div class="mx-auto max-w-6xl grid gap-10 lg:grid-cols-2 px-6 py-14">
+    <!-- Hero image -->
+    <img src="../../static/img/robots/guideone/01.jpg"
+         alt="GuideOne"
+         class="w-full h-auto rounded-lg shadow-lg" />
+
+    <!-- Text -->
+    <div>
+      <h2 class="text-3xl font-bold text-brand">GuideOne</h2>
+      <p class="mt-2 text-zinc-400">Autonomous crowd-magnet kiosk - launch 2026</p>
+      <p class="mt-4"><strong>Status:</strong> In Development • Expected Q2 2026</p>
+      <div class="prose prose-invert max-w-none mt-6" >
+            <h3 class="text-xl font-semibold mb-2">Key hardware & mobility</h3>
+            <ul class="list-disc ml-6 space-y-1">
+              <li>Full-steel <strong>ARK-chassis v1</strong> – separates into 3 pieces for SUV transport.</li>
+              <li>Twin hub-motors + two caster wheels.</li>
+              <li>Two fully-articulated 6-axis arms with working fingers.</li>
+              <li>15.6″ touch-OLED on chest for interaction.</li>
+              <li>Auto-dock charger – rolls home at 15 % battery.</li>
+              <li>Full-map navigation with LiDAR & depth camera.</li>
+              <li>Tri-sensor nav: LiDAR, Intel RealSense depth, HD face-detection cam.</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold mt-4 mb-2">Conversational&nbsp;AI suite</h3>
+            <ul class="list-disc ml-6 space-y-1">
+              <li><strong>Persona-Engine v2</strong> – OpenAI GPT-4 Turbo backend with real-time vector-search memory.</li>
+              <li><strong>Full multilingual support</strong> – understands &amp; speaks <em>Modern Standard Arabic</em> and <em>English</em> natively; auto-detects language mid-conversation.</li>
+              <li>Emotion-mapped TTS: 4 voice fonts (friendly, formal, playful, sarcastic).</li>
+              <li>On-device session log → fine-tunes dialogue for higher engagement.</li>
+            </ul>
+
+
+            <h3 class="text-xl font-semibold mt-4 mb-2">Human + gesture interaction</h3>
+            <ul class="list-disc ml-6 space-y-1">
+              <li>LED face with many emotion morph targets.</li>
+              <li>Gesture arms (optional fixed-arm kit for -33.3 % cost).</li>
+              <li>Depth-aware audience sizing &amp; heat-map; greets only approaching visitors.</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold mt-4 mb-2">First customer</h3>
+            <p class="ml-6">
+              <strong>UAE Red Crescent</strong> – roaming donation agent
+              (tap-to-give, animated thank-you sequence) – <em>in development</em>.
+            </p>
+
+            <h3 class="text-xl font-semibold mt-4 mb-2">Why are there no real pictures?</h3>
+            <p class="ml-6">
+              ARK-1 is the production-grade successor to the Merhaab prototype and is
+              still on the assembly line. Images shown here are CAD renders of the
+              final vision.
+            </p>
+</div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="bg-zinc-900/40 py-8 ">
+    <h3 class="text-center text-2xl font-semibold text-brand mb-8">Gallery</h3>
+    <div class="mx-auto max-w-5xl grid gap-4 sm:grid-cols-2 lg:grid-cols-3 px-4">
+      
+        <img src="../../static/img/robots/guideone/01.jpg"
+             alt=""
+             class="w-full h-32 sm:h-40 object-cover rounded-md cursor-pointer hover:opacity-80 lightboxable" />
+      
+        <img src="../../static/img/robots/guideone/02.jpg"
+             alt=""
+             class="w-full h-32 sm:h-40 object-cover rounded-md cursor-pointer hover:opacity-80 lightboxable" />
+      
+        <img src="../../static/img/robots/guideone/03.jpg"
+             alt=""
+             class="w-full h-32 sm:h-40 object-cover rounded-md cursor-pointer hover:opacity-80 lightboxable" />
+      
+    </div>
+  
+  <!-- Customised purposes / use-cases -->
+  <section class="mt-14 py-10 bg-zinc-900/40">   
+    <div class="max-w-4xl mx-auto px-6">
+      <h3 class="text-xl sm:text-2xl font-semibold text-brand mb-6">
+        Customised Purposes / Use-Cases
+      </h3>
+
+      <div class="rounded-lg border border-zinc-800 bg-zinc-900/70 p-8 shadow-lg">
+        <ul class="list-disc ml-6 space-y-3 text-zinc-300">
+          <li><em>Qahwa Serving</em> – Serve Arabic coffee to visitors using a heated tank and cups.</li>
+          <li><em>Shop Attendant</em> – Welcome customers &amp; recommend products.</li>
+          <li><em>Museum / Expo Guide</em> – Point-gesture with multilingual narration.</li>
+          <li><em>Education Platform</em> – ROS 2, AI &amp; advanced-robotics learning bed.</li>
+          <li><em>Exhibition Booth Attraction Bot</em> – Interactive guide that introduces topics and points to related brochures.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  
+
+  
+
+</section>
+
+
+<!-- ── Call-to-Action: Order / Customise ── -->
+<section class="py-14 bg-zinc-950">
+  <div class="max-w-xl mx-auto text-center px-6">
+    <h3 class="text-2xl font-semibold text-brand mb-6">
+      Ready to order or customise your ARK-1?
+    </h3>
+
+    <p class="text-zinc-300 mb-8">
+      Tell us what modules you need &mdash; gesture arms, Qahwa tank,
+      multilingual persona &mdash; and we’ll build a quote in 24 h.
+    </p>
+
+    <a href="../../contact/index.html"
+       class="inline-block bg-brand/90 text-zinc-900 font-semibold px-10 py-4 rounded-md hover:bg-brand shadow-lg">
+       Order / Customise&nbsp;Now →
+    </a>
+  </div>
+</section>
+
+
+<div class="text-center my-12">
+  <a href="../../index.html" class="text-brand hover:underline">← Back to creations</a>
+</div>
+</main>
+
+  <footer class="text-center py-8 text-xs text-zinc-500">
+    © 2025 Ahmad Hasan&nbsp;· All rights reserved
+  </footer>
+
+  <script src="../../static/js/lightbox.js"></script>
+</body>
+</html>
