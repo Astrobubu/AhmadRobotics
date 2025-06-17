@@ -1,119 +1,103 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" class="bg-zinc-950 text-zinc-200 scroll-smooth">
-<head>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- NEW -->
+        <link rel="icon" href="../static/img/favicon.ico" />
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />  <!-- NEW -->
-  <link rel="icon" href="../static/img/favicon.ico">
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <title>About – Ahmad Robotics</title>
 
-  <title>About – Ahmad Robotics</title>
+        <!-- Tailwind CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = { theme: { extend: { colors: { brand: "#00e0ff" } } } };
+        </script>
+    </head>
+    <body class="font-sans">
+        <!-- Header -->
+        <header class="bg-zinc-900/90 backdrop-blur sticky top-0 z-50" x-data="{ open:false }">
+            <!-- Alpine state -->
+            <div class="mx-auto max-w-7xl flex items-center justify-between px-6 py-4">
+                <!-- logo icon only -->
+                <a href="../index.html">
+                    <img src="../static/img/logo.png" alt="The GuideOn Project" class="h-10 w-10" />
+                </a>
+                <a href="../index.html">
+                    <span class="text-brand text-2xl drop-shadow-md">
+                        The GuideOn Project
+                    </span>
+                </a>
+                <!-- hamburger button -->
+                <button @click="open=!open" class="sm:hidden text-brand focus:outline-none" aria-label="Toggle navigation">
+                    <!-- 3-bar icon -->
+                    <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config = { theme:{ extend:{ colors:{ brand:'#00e0ff' } } } }</script>
-</head>
-<body class="font-sans">
-  <!-- Header -->
-<header class="bg-zinc-900/90 backdrop-blur sticky top-0 z-50"
-        x-data="{ open:false }">                                     <!-- Alpine state -->
-  <div class="mx-auto max-w-7xl flex items-center justify-between px-6 py-4">
+                <!-- desktop nav -->
+                <nav class="hidden sm:flex space-x-6 text-sm">
+                    <a href="index.html" class="hover:text-brand">About</a>
+                    <a href="../contact/index.html" class="hover:text-brand">Contact</a>
+                </nav>
+            </div>
 
-    <!-- logo icon only -->
-    <a href="../index.html">
-      <img src="../static/img/logo.png"
-           alt="The GuideOn Project"
-           class="h-10 w-10">
+            <!-- mobile menu -->
+            <nav x-show="open" x-transition.opacity.duration.200ms class="sm:hidden bg-zinc-900/95 backdrop-blur px-6 pb-4 space-y-2 text-sm">
+                <a href="index.html" class="block py-2 border-b border-zinc-800 hover:text-brand">About</a>
+                <a href="../contact/index.html" class="block py-2 hover:text-brand">Contact</a>
+            </nav>
+        </header>
 
-    </a>
-       <span class="text-brand text-2xl drop-shadow-md">
-        The GuideOn Project
-      </span>
-    <!-- hamburger button -->
-    <button @click="open=!open"
-            class="sm:hidden text-brand focus:outline-none"
-            aria-label="Toggle navigation">
-      <!-- 3-bar icon -->
-      <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2"
-           viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round"
-              d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-    </button>
-
-    <!-- desktop nav -->
-    <nav class="hidden sm:flex space-x-6 text-sm">
-      <a href="index.html"   class="hover:text-brand">About</a>
-      <a href="../contact/index.html" class="hover:text-brand">Contact</a>
-    </nav>
-  </div>
-
-  <!-- mobile menu -->
-  <nav x-show="open"
-       x-transition.opacity.duration.200ms
-       class="sm:hidden bg-zinc-900/95 backdrop-blur px-6 pb-4 space-y-2 text-sm">
-    <a href="index.html"   class="block py-2 border-b border-zinc-800 hover:text-brand">About</a>
-    <a href="../contact/index.html" class="block py-2 hover:text-brand">Contact</a>
-  </nav>
-</header>
-
-
-  <main>
+        <main>
 <section class="py-16 bg-zinc-950">
-  <div class="max-w-5xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-brand mb-12 text-center">Who&nbsp;We&nbsp;Are</h2>
+    <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-brand mb-12 text-center">Who&nbsp;We&nbsp;Are</h2>
 
-    <!-- ── Ahmad ── -->
-    <div class="flex flex-col sm:flex-row gap-8 mb-14">
-      <img src="../static/img/team_ahmed.jpg"
-           class="w-44 h-44 object-cover rounded-full border-4 border-brand/60 mx-auto sm:mx-0">
-      <div>
-        <h3 class="text-2xl font-semibold">Ahmad Hasan</h3>
-        <p class="text-brand text-sm mb-3">Founder · Robotics Lead</p>
+        <!-- ── Ahmad ── -->
+        <div class="flex flex-col sm:flex-row gap-8 mb-14">
+            <img src="../static/img/team_ahmed.jpg" class="w-44 h-44 object-cover rounded-full border-4 border-brand/60 mx-auto sm:mx-0" />
+            <div>
+                <h3 class="text-2xl font-semibold">Ahmad Hasan</h3>
+                <p class="text-brand text-sm mb-3">Founder · Robotics Lead</p>
 
-        <p class="mb-4 text-zinc-300">
-          Ahmad is a self-taught maker who blends <strong>Python</strong>, <strong>ROS 2</strong>,
-          metal-work and astrophysics to turn raw ideas into
-          autonomous machines.  He spent six years at Dubai Astronomy Group
-          fabricating full-automatic observatory domes and writing the
-          UAE’s first meteor-detection ML pipeline&nbsp;&mdash;&nbsp;then built
-          <em>Merhaab</em>, a Jetson-powered receptionist robot that greeted
-          20&nbsp;000 visitors at GITEX.
-        </p>
+                <p class="mb-4 text-zinc-300">
+                    Ahmad is a self-taught maker who blends <strong>Python</strong>, <strong>ROS 2</strong>, metal-work and astrophysics to turn raw ideas into autonomous machines. He spent six years at Dubai Astronomy Group fabricating
+                    full-automatic observatory domes and writing the UAE’s first meteor-detection ML pipeline&nbsp;&mdash;&nbsp;then built <em>Merhaab</em>, a Jetson-powered receptionist robot that greeted 20&nbsp;000 visitors at GITEX.
+                </p>
 
-        <ul class="list-disc ml-6 text-sm space-y-1 text-zinc-400">
-          <li>Designer / Astronomer since 2013 (Dubai Astronomy Group)</li>
-          <li>Ex-Software Engineer, Sharjah Academy for Astronomy & Space Sciences (2017-19)</li>
-          <li>Projects: UAEMeteor Network, decimetric radio telescope recorder, two telescope pier builds</li>
-          <li>Skills: Python · C++ · PCB design · TIG welding · 3-D printing · ML model training</li>
-          <li>Published at COSPAR 2021 and eMeteorNews 2019</li>
-        </ul>
-      </div>
+                <ul class="list-disc ml-6 text-sm space-y-1 text-zinc-400">
+                    <li>Designer / Astronomer since 2013 (Dubai Astronomy Group)</li>
+                    <li>Ex-Software Engineer, Sharjah Academy for Astronomy & Space Sciences (2017-19)</li>
+                    <li>Projects: UAEMeteor Network, decimetric radio telescope recorder, two telescope pier builds</li>
+                    <li>Skills: Python · C++ · PCB design · TIG welding · 3-D printing · ML model training</li>
+                    <li>Published at COSPAR 2021 and eMeteorNews 2019</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ── Faisal ── -->
+        <div class="flex flex-col sm:flex-row gap-8">
+            <img src="../static/img/team_faisal.jpg" class="w-44 h-44 object-cover rounded-full border-4 border-brand/60 mx-auto sm:mx-0" />
+            <div>
+                <h3 class="text-2xl font-semibold">Faisal Al-Saleh</h3>
+                <p class="text-brand text-sm mb-3">Sales Manager</p>
+                <p class="text-zinc-300">
+                    Faisal turns bleeding-edge demos into signed POs. With a background in GCC retail roll-outs he now matches NGOs, malls and event organisers with robots that deliver measurable ROI in foot-traffic, dwell-time and
+                    conversions.
+                </p>
+            </div>
+        </div>
     </div>
-
-    <!-- ── Faisal ── -->
-    <div class="flex flex-col sm:flex-row gap-8">
-      <img src="../static/img/team_faisal.jpg"
-           class="w-44 h-44 object-cover rounded-full border-4 border-brand/60 mx-auto sm:mx-0">
-      <div>
-        <h3 class="text-2xl font-semibold">Faisal Al-Saleh</h3>
-        <p class="text-brand text-sm mb-3">Sales Manager</p>
-        <p class="text-zinc-300">
-          Faisal turns bleeding-edge demos into signed POs.  With a background
-          in GCC retail roll-outs he now matches NGOs, malls and event
-          organisers with robots that deliver measurable ROI in foot-traffic,
-          dwell-time and conversions.
-        </p>
-      </div>
-    </div>
-  </div>
 </section>
 </main>
 
-  <footer class="text-center py-8 text-xs text-zinc-500">
-    © 2025 The GuideOn Project&nbsp;· All rights reserved
-  </footer>
+        <footer class="text-center py-8 text-xs text-zinc-500">
+            © 2025 The GuideOn Project&nbsp;· All rights reserved
+        </footer>
 
-  <script src="../static/js/lightbox.js"></script>
-</body>
+        <script src="../static/js/lightbox.js"></script>
+    </body>
 </html>

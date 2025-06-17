@@ -1,368 +1,332 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" class="bg-zinc-950 text-zinc-200 scroll-smooth">
-<head>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- NEW -->
+        <link rel="icon" href="static/img/favicon.ico" />
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />  <!-- NEW -->
-  <link rel="icon" href="static/img/favicon.ico">
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <title>The GuideOn Project</title>
 
-  <title>The GuideOn Project</title>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-G00CT8ERN6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+        <!-- Tailwind CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = { theme: { extend: { colors: { brand: "#00e0ff" } } } };
+        </script>
+    </head>
+    <body class="font-sans">
+        <!-- Header -->
+        <header class="bg-zinc-900/90 backdrop-blur sticky top-0 z-50" x-data="{ open:false }">
+            <!-- Alpine state -->
+            <div class="mx-auto max-w-7xl flex items-center justify-between px-6 py-4">
+                <!-- logo icon only -->
+                <a href="index.html">
+                    <img src="static/img/logo.png" alt="The GuideOn Project" class="h-10 w-10" />
+                </a>
+                <a href="index.html">
+                    <span class="text-brand text-2xl drop-shadow-md">
+                        The GuideOn Project
+                    </span>
+                </a>
+                <!-- hamburger button -->
+                <button @click="open=!open" class="sm:hidden text-brand focus:outline-none" aria-label="Toggle navigation">
+                    <!-- 3-bar icon -->
+                    <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
 
-  gtag('config', 'G-G00CT8ERN6');
-</script>
+                <!-- desktop nav -->
+                <nav class="hidden sm:flex space-x-6 text-sm">
+                    <a href="about/index.html" class="hover:text-brand">About</a>
+                    <a href="contact/index.html" class="hover:text-brand">Contact</a>
+                </nav>
+            </div>
 
-  <!-- Tailwind CDN -->
-  
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config = { theme:{ extend:{ colors:{ brand:'#00e0ff' } } } }</script>
-</head>
-<body class="font-sans">
-  <!-- Header -->
-<header class="bg-zinc-900/90 backdrop-blur sticky top-0 z-50"
-        x-data="{ open:false }">                                     <!-- Alpine state -->
-  <div class="mx-auto max-w-7xl flex items-center justify-between px-6 py-4">
+            <!-- mobile menu -->
+            <nav x-show="open" x-transition.opacity.duration.200ms class="sm:hidden bg-zinc-900/95 backdrop-blur px-6 pb-4 space-y-2 text-sm">
+                <a href="about/index.html" class="block py-2 border-b border-zinc-800 hover:text-brand">About</a>
+                <a href="contact/index.html" class="block py-2 hover:text-brand">Contact</a>
+            </nav>
+        </header>
 
-    <!-- logo icon only -->
-    <a href="index.html">
-      <img src="static/img/logo.png"
-           alt="The GuideOn Project"
-           class="h-10 w-10">
-
-    </a>
-       <span class="text-brand text-2xl drop-shadow-md">
-        The GuideOn Project
-      </span>
-    <!-- hamburger button -->
-    <button @click="open=!open"
-            class="sm:hidden text-brand focus:outline-none"
-            aria-label="Toggle navigation">
-      <!-- 3-bar icon -->
-      <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2"
-           viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round"
-              d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-    </button>
-
-    <!-- desktop nav -->
-    <nav class="hidden sm:flex space-x-6 text-sm">
-      <a href="about/index.html"   class="hover:text-brand">About</a>
-      <a href="contact/index.html" class="hover:text-brand">Contact</a>
-    </nav>
-  </div>
-
-  <!-- mobile menu -->
-  <nav x-show="open"
-       x-transition.opacity.duration.200ms
-       class="sm:hidden bg-zinc-900/95 backdrop-blur px-6 pb-4 space-y-2 text-sm">
-    <a href="about/index.html"   class="block py-2 border-b border-zinc-800 hover:text-brand">About</a>
-    <a href="contact/index.html" class="block py-2 hover:text-brand">Contact</a>
-  </nav>
-</header>
-
-
-  <main>
+        <main>
 <!-- ARK-1 HERO -->
 <section class="bg-zinc-900">
- <div class="mx-auto max-w-7xl grid gap-10 lg:grid-cols-2 px-6 py-16"> 
-    <img id="mainpic" src="static/img/robots/guideon/01.jpg"
-         class="w-full h-auto rounded-xl shadow-2xl" alt="GuideOn">
+    <div class="mx-auto max-w-7xl grid gap-10 lg:grid-cols-2 px-6 py-16">
+        <img id="mainpic" src="static/img/robots/guideon/01.jpg" class="w-full h-auto rounded-xl shadow-2xl" alt="GuideOn" />
 
-    <div class="flex flex-col justify-center">
-      <h1 class="text-4xl font-bold text-brand mb-2">GuideOn</h1>
-  <p class="text-m text-zinc-400 mb-6">
-    Evolved from our Merhaab prototype—now a fully-modular production chassis.
-  </p>
-      <p class="text-lg mb-6">GuideOn is a modular, AI-powered kiosk robot that rolls in, charms the crowd with expressive gestures and smart chat, and tackles roles from coffee-serving to fundraising—all fully autonomous.</p>
-      <a href="robots/guideon/index.html"
-         class="inline-block bg-brand/90 text-zinc-900 font-semibold px-6 py-3 rounded-md hover:bg-brand">Discover full spec →</a>
-    </div>
-  </div>
-
-<!-- Creations Grid -->
-<section class="py-16 bg-zinc-950">
-  <h2 class="text-center text-3xl font-bold text-brand mb-10">Our Products</h2>
-  <div class="mx-auto max-w-7xl grid gap-8 sm:grid-cols-2 lg:grid-cols-3 px-6">
-    
-      <a href="robots/guideon/index.html"
-         class="group rounded-lg overflow-hidden bg-zinc-900 border border-zinc-800 hover:border-brand transition">
-        <img src="static/img/robots/guideon/01.jpg"
-             alt="GuideOn"
-             class="h-72 w-full object-cover object-top group-hover:scale-105 transition" />
-        <div class="p-4">
-          <h3 class="text-lg font-semibold text-zinc-100">GuideOn</h3>
-            <p class="text-xs text-zinc-400 mb-1">Year 2026</p>      <!-- NEW -->
-
-          <p class="text-sm text-zinc-400">Autonomous crowd-magnet kiosk - launch 2026</p>
-          <span class="inline-block mt-3 text-brand text-sm">Learn More →</span>
+        <div class="flex flex-col justify-center">
+            <h1 class="text-4xl font-bold text-brand mb-2">GuideOn</h1>
+            <p class="text-m text-zinc-400 mb-6">
+                Evolved from our Merhaab prototype—now a fully-modular production chassis.
+            </p>
+            <p class="text-lg mb-6">GuideOn is a modular, AI-powered kiosk robot that rolls in, charms the crowd with expressive gestures and smart chat, and tackles roles from coffee-serving to fundraising—all fully autonomous.</p>
+            <a href="robots/guideon/index.html" class="inline-block bg-brand/90 text-zinc-900 font-semibold px-6 py-3 rounded-md hover:bg-brand">Discover full spec →</a>
         </div>
-      </a>
-    
-      <a href="robots/inmoov/index.html"
-         class="group rounded-lg overflow-hidden bg-zinc-900 border border-zinc-800 hover:border-brand transition">
-        <img src="static/img/robots/inmoov/01.jpg"
-             alt="InMoov – R&amp;D Testbed"
-             class="h-72 w-full object-cover object-top group-hover:scale-105 transition" />
-        <div class="p-4">
-          <h3 class="text-lg font-semibold text-zinc-100">InMoov – R&amp;D Testbed</h3>
-            <p class="text-xs text-zinc-400 mb-1">Year 2024</p>      <!-- NEW -->
+    </div>
 
-          <p class="text-sm text-zinc-400">3-D-printed humanoid for Education</p>
-          <span class="inline-block mt-3 text-brand text-sm">Learn More →</span>
+    <!-- Creations Grid -->
+    <section class="py-16 bg-zinc-950">
+        <h2 class="text-center text-3xl font-bold text-brand mb-10">Our Products</h2>
+        <div class="mx-auto max-w-7xl grid gap-8 sm:grid-cols-2 lg:grid-cols-3 px-6">
+            
+            <a href="robots/guideon/index.html" class="group rounded-lg overflow-hidden bg-zinc-900 border border-zinc-800 hover:border-brand transition">
+                <img src="static/img/robots/guideon/01.jpg" alt="GuideOn" class="h-72 w-full object-cover object-top group-hover:scale-105 transition" />
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-zinc-100">GuideOn</h3>
+                    <p class="text-xs text-zinc-400 mb-1">Year 2026</p>
+                    <!-- NEW -->
+
+                    <p class="text-sm text-zinc-400">Autonomous crowd-magnet kiosk - launch 2026</p>
+                    <span class="inline-block mt-3 text-brand text-sm">Learn More →</span>
+                </div>
+            </a>
+            
+            <a href="robots/guideon-desk/index.html" class="group rounded-lg overflow-hidden bg-zinc-900 border border-zinc-800 hover:border-brand transition">
+                <img src="static/img/robots/guideon-desk/01.jpg" alt="GuideOn-Desk" class="h-72 w-full object-cover object-top group-hover:scale-105 transition" />
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-zinc-100">GuideOn-Desk</h3>
+                    <p class="text-xs text-zinc-400 mb-1">Year 2028</p>
+                    <!-- NEW -->
+
+                    <p class="text-sm text-zinc-400">Stationary greeter – the top half of GuideOn</p>
+                    <span class="inline-block mt-3 text-brand text-sm">Learn More →</span>
+                </div>
+            </a>
+            
+            <a href="robots/merhaab/index.html" class="group rounded-lg overflow-hidden bg-zinc-900 border border-zinc-800 hover:border-brand transition">
+                <img src="static/img/robots/merhaab/01.jpg" alt="Merhaab Prototype" class="h-72 w-full object-cover object-top group-hover:scale-105 transition" />
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-zinc-100">Merhaab Prototype</h3>
+                    <p class="text-xs text-zinc-400 mb-1">Year 2021</p>
+                    <!-- NEW -->
+
+                    <p class="text-sm text-zinc-400">Al Maarifa-funded receptionist that started it all</p>
+                    <span class="inline-block mt-3 text-brand text-sm">Learn More →</span>
+                </div>
+            </a>
+            
+            <a href="robots/inmoov/index.html" class="group rounded-lg overflow-hidden bg-zinc-900 border border-zinc-800 hover:border-brand transition">
+                <img src="static/img/robots/inmoov/01.jpg" alt="InMoov – R&amp;D Testbed" class="h-72 w-full object-cover object-top group-hover:scale-105 transition" />
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-zinc-100">InMoov – R&amp;D Testbed</h3>
+                    <p class="text-xs text-zinc-400 mb-1">Year 2024</p>
+                    <!-- NEW -->
+
+                    <p class="text-sm text-zinc-400">3-D-printed humanoid for Education</p>
+                    <span class="inline-block mt-3 text-brand text-sm">Learn More →</span>
+                </div>
+            </a>
+            
         </div>
-      </a>
-    
-      <a href="robots/merhaab/index.html"
-         class="group rounded-lg overflow-hidden bg-zinc-900 border border-zinc-800 hover:border-brand transition">
-        <img src="static/img/robots/merhaab/01.jpg"
-             alt="Merhaab Prototype"
-             class="h-72 w-full object-cover object-top group-hover:scale-105 transition" />
-        <div class="p-4">
-          <h3 class="text-lg font-semibold text-zinc-100">Merhaab Prototype</h3>
-            <p class="text-xs text-zinc-400 mb-1">Year 2021</p>      <!-- NEW -->
+    </section>
 
-          <p class="text-sm text-zinc-400">Al Maarifa-funded receptionist that started it all</p>
-          <span class="inline-block mt-3 text-brand text-sm">Learn More →</span>
+    <!-- Showreel Mosaic -->
+    <div class="bg-zinc-900/60">
+        <section class="py-12">
+            <h2 class="text-center text-2xl font-semibold mb-8">News Coverage</h2>
+
+            <!-- ① video first, muted-autoplay once it’s visible -->
+            <div class="mx-auto max-w-4xl mb-10 px-4">
+                <video
+                    id="showreelVid"
+                    class="w-full rounded-lg shadow-lg"
+                    controls
+                    playsinline
+                    preload="metadata"
+                    src="static/img/robots/merhaab/reel.mp4"
+                ></video>
+            </div>
+
+            <h2 class="text-center text-2xl font-semibold mb-8">Showreel</h2>
+            <div class="mx-auto max-w-6xl columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 px-4">
+                 
+                <img src="static/img/robots/guideon/01.jpg" alt="" class="mb-4 rounded-md cursor-pointer hover:opacity-80 lightboxable" />
+                
+                <img src="static/img/robots/guideon/02.jpg" alt="" class="mb-4 rounded-md cursor-pointer hover:opacity-80 lightboxable" />
+                
+                <img src="static/img/robots/guideon/03.jpg" alt="" class="mb-4 rounded-md cursor-pointer hover:opacity-80 lightboxable" />
+                  
+                <img src="static/img/robots/guideon-desk/01.jpg" alt="" class="mb-4 rounded-md cursor-pointer hover:opacity-80 lightboxable" />
+                
+                <img src="static/img/robots/guideon-desk/02.jpg" alt="" class="mb-4 rounded-md cursor-pointer hover:opacity-80 lightboxable" />
+                
+                <img src="static/img/robots/guideon-desk/03.jpg" alt="" class="mb-4 rounded-md cursor-pointer hover:opacity-80 lightboxable" />
+                  
+                <img src="static/img/robots/merhaab/01.jpg" alt="" class="mb-4 rounded-md cursor-pointer hover:opacity-80 lightboxable" />
+                
+                <img src="static/img/robots/merhaab/02.jpg" alt="" class="mb-4 rounded-md cursor-pointer hover:opacity-80 lightboxable" />
+                
+                <img src="static/img/robots/merhaab/03.jpg" alt="" class="mb-4 rounded-md cursor-pointer hover:opacity-80 lightboxable" />
+                  
+                <img src="static/img/robots/inmoov/01.jpg" alt="" class="mb-4 rounded-md cursor-pointer hover:opacity-80 lightboxable" />
+                
+                <img src="static/img/robots/inmoov/02.jpg" alt="" class="mb-4 rounded-md cursor-pointer hover:opacity-80 lightboxable" />
+                
+                <img src="static/img/robots/inmoov/03.jpg" alt="" class="mb-4 rounded-md cursor-pointer hover:opacity-80 lightboxable" />
+                 
+            </div>
+        </section>
+    </div>
+    <!-- Custom-robot builder promo -->
+    <section class="py-16 bg-zinc-950">
+        <h2 class="text-center text-3xl font-bold text-brand mb-10">Build&nbsp;Your&nbsp;Own Robot</h2>
+
+        <p class="max-w-3xl mx-auto text-center text-zinc-300 mb-12">Start with the GuideOn chassis, bolt on the modules you need, upload a personality pack &mdash; and roll out a robot that fits <em>your</em> venue.</p>
+
+        <!-- Use-case icons -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16 px-6 max-w-6xl mx-auto">
+            <div class="flex items-start space-x-4">
+                <div class="text-3xl">🏛️</div>
+                <div>
+                    <h4 class="font-semibold">Government Offices</h4>
+                    <p class="text-sm text-zinc-600">Visitor guidance, ticketing & queue systems.</p>
+                </div>
+            </div>
+            <div class="flex items-start space-x-4">
+                <div class="text-3xl">🏥</div>
+                <div>
+                    <h4 class="font-semibold">Hospitals & Clinics</h4>
+                    <p class="text-sm text-zinc-600">Wayfinding, check-in & companionship.</p>
+                </div>
+            </div>
+            <div class="flex items-start space-x-4">
+                <div class="text-3xl">🎓</div>
+                <div>
+                    <h4 class="font-semibold">Universities & Schools</h4>
+                    <p class="text-sm text-zinc-600">Registration & robotics education platform.</p>
+                </div>
+            </div>
+            <div class="flex items-start space-x-4">
+                <div class="text-3xl">🏢</div>
+                <div>
+                    <h4 class="font-semibold">Corporate Lobbies</h4>
+                    <p class="text-sm text-zinc-600">AI-powered reception & info desk support.</p>
+                </div>
+            </div>
+            <div class="flex items-start space-x-4">
+                <div class="text-3xl">☕</div>
+                <div>
+                    <h4 class="font-semibold">Restaurants & Majlis</h4>
+                    <p class="text-sm text-zinc-600">Arabic coffee serving & table-side service.</p>
+                </div>
+            </div>
+            <div class="flex items-start space-x-4">
+                <div class="text-3xl">🖼️</div>
+                <div>
+                    <h4 class="font-semibold">Events & Exhibitions</h4>
+                    <p class="text-sm text-zinc-600">Engaging assistant & visitor interaction.</p>
+                </div>
+            </div>
+            <div class="flex items-start space-x-4">
+                <div class="text-3xl">🏦</div>
+                <div>
+                    <h4 class="font-semibold">Banks & Telecom</h4>
+                    <p class="text-sm text-zinc-600">Queue-ticket support & helpdesk info.</p>
+                </div>
+            </div>
+            <div class="flex items-start space-x-4">
+                <div class="text-3xl">🧓</div>
+                <div>
+                    <h4 class="font-semibold">Elderly & Special Needs</h4>
+                    <p class="text-sm text-zinc-600">Social interaction & gentle guidance.</p>
+                </div>
+            </div>
+            <div class="flex items-start space-x-4">
+                <div class="text-3xl">🛍️</div>
+                <div>
+                    <h4 class="font-semibold">Shop Attendant</h4>
+                    <p class="text-sm text-zinc-600">Welcome customers & recommend products.</p>
+                </div>
+            </div>
         </div>
-      </a>
-    
-  </div>
-</section>
 
-<!-- Showreel Mosaic -->
-<div class="bg-zinc-900/60">
-  <section class="py-12">
-    <h2 class="text-center text-2xl font-semibold mb-8">News Coverage</h2>
+        <!-- Modules -->
+        <div class="mx-auto max-w-6xl grid gap-8 sm:grid-cols-2 lg:grid-cols-4 px-6">
+            <!-- Category 1: Hospitality & Service Attachments -->
+            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
+                <h3 class="text-lg font-semibold mb-2 text-brand">Hospitality Attachments</h3>
+                <p class="text-sm text-zinc-400">
+                    Arabic coffee dispensers, tray modules, cup holders & heating compartments — ideal for majlis, receptions, and events.
+                </p>
+            </div>
 
-    <!-- ① video first, muted-autoplay once it’s visible -->
-    <div class="mx-auto max-w-4xl mb-10 px-4">
-      <video id="showreelVid"
-             class="w-full rounded-lg shadow-lg"
-             controls                    
-             playsinline
-                                    
-             preload="metadata"
-             src="static/img/robots/merhaab/reel.mp4"></video>
-    </div>
+            <!-- Category 2: Ticketing & Integration Systems -->
+            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
+                <h3 class="text-lg font-semibold mb-2 text-brand">Queue & Ticketing Systems</h3>
+                <p class="text-sm text-zinc-400">
+                    Integrate with queue ticket printers, visitor ID scanners, and CRM dashboards — perfect for banks, telecoms & government.
+                </p>
+            </div>
 
+            <!-- Category 3: Guidance & Interactive Display -->
+            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
+                <h3 class="text-lg font-semibold mb-2 text-brand">Smart Display Interfaces</h3>
+                <p class="text-sm text-zinc-400">
+                    Large screens or tablets with multi-language content, gesture interaction & maps — for hospitals, exhibitions & museums.
+                </p>
+            </div>
 
-  <h2 class="text-center text-2xl font-semibold mb-8">Showreel</h2>
-  <div class="mx-auto max-w-6xl columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 px-4">
-    
-      
-        <img src="static/img/robots/guideon/01.jpg"
-             alt=""
-             class="mb-4 rounded-md cursor-pointer hover:opacity-80 lightboxable" />
-      
-        <img src="static/img/robots/guideon/02.jpg"
-             alt=""
-             class="mb-4 rounded-md cursor-pointer hover:opacity-80 lightboxable" />
-      
-        <img src="static/img/robots/guideon/03.jpg"
-             alt=""
-             class="mb-4 rounded-md cursor-pointer hover:opacity-80 lightboxable" />
-      
-    
-      
-        <img src="static/img/robots/inmoov/01.jpg"
-             alt=""
-             class="mb-4 rounded-md cursor-pointer hover:opacity-80 lightboxable" />
-      
-        <img src="static/img/robots/inmoov/02.jpg"
-             alt=""
-             class="mb-4 rounded-md cursor-pointer hover:opacity-80 lightboxable" />
-      
-        <img src="static/img/robots/inmoov/03.jpg"
-             alt=""
-             class="mb-4 rounded-md cursor-pointer hover:opacity-80 lightboxable" />
-      
-    
-      
-        <img src="static/img/robots/merhaab/01.jpg"
-             alt=""
-             class="mb-4 rounded-md cursor-pointer hover:opacity-80 lightboxable" />
-      
-        <img src="static/img/robots/merhaab/02.jpg"
-             alt=""
-             class="mb-4 rounded-md cursor-pointer hover:opacity-80 lightboxable" />
-      
-        <img src="static/img/robots/merhaab/03.jpg"
-             alt=""
-             class="mb-4 rounded-md cursor-pointer hover:opacity-80 lightboxable" />
-      
-    
-  </div>
-</section>
-</div>
-<!-- Custom-robot builder promo -->
-<section class="py-16 bg-zinc-950">
-  <h2 class="text-center text-3xl font-bold text-brand mb-10">Build&nbsp;Your&nbsp;Own Robot</h2>
+            <!-- Category 4: Education & Research Attachments -->
+            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
+                <h3 class="text-lg font-semibold mb-2 text-brand">Education & AI Modules</h3>
+                <p class="text-sm text-zinc-400">
+                    Teaching-ready platforms with ROS2, AI vision, voice integration & hardware access — ideal for schools and labs.
+                </p>
+            </div>
+        </div>
 
-  <p class="max-w-3xl mx-auto text-center text-zinc-300 mb-12">
-    Start with the GuideOn chassis, bolt on the modules you need, upload a
-    personality pack &mdash; and roll out a robot that fits <em>your</em> venue.
-  </p>
+        <!-- CTA -->
+        <div class="text-center mt-12">
+            <a href="contact/index.html" class="inline-block bg-brand/90 text-zinc-900 font-semibold px-8 py-3 rounded-md hover:bg-brand">
+                Talk to us about your build →
+            </a>
+        </div>
+    </section>
+    <!-- Team -->
+    <section class="py-16 bg-zinc-900/60">
+        <h2 class="text-center text-3xl font-bold text-brand mb-10">Meet the Team</h2>
+        <div class="flex flex-wrap justify-center gap-12 text-center max-w-5xl mx-auto px-6">
+            <div class="text-center">
+                <img style="display: inline;" src="static/img/team_ahmed.jpg" alt="Ahmed Hassan" class="w-40 h-40 rounded-full object-cover border-4 border-brand/60 mb-4" />
+                <h4 class="text-lg font-semibold">Ahmad Hasan</h4>
+                <p class="text-brand text-sm">Founder · Robotics Lead</p>
+                <p class="text-sm mt-2 max-w-xs">Designs, prototypes and integrates every drive motor &amp; ROS node.</p>
+            </div>
+            <div class="text-center">
+                <img style="display: inline;" src="static/img/team_faisal.jpg" alt="Faisal Kamal" class="w-40 h-40 rounded-full object-cover border-4 border-brand/60 mb-4" />
+                <h4 class="text-lg font-semibold">Faisal Kamal</h4>
+                <p class="text-brand text-sm">Representative</p>
+                <p class="text-sm mt-2 max-w-xs">Connects NGOs &amp; brands with the right robot solution.</p>
+            </div>
+        </div>
+    </section>
+    <!-- ③ tiny helper script, just before </body> or inside index.html -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const vid = document.getElementById("showreelVid");
+            if (!vid) return;
+            const io = new IntersectionObserver(
+                ([e]) => {
+                    if (e.isIntersecting) {
+                        vid.play().catch(() => {});
+                        io.disconnect();
+                    }
+                },
+                { threshold: 0.25 }
+            );
+            io.observe(vid);
+        });
+    </script>
 
-  <!-- Use-case icons -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16 px-6 max-w-6xl mx-auto">
-    <div class="flex items-start space-x-4">
-      <div class="text-3xl">🏛️</div>
-      <div>
-        <h4 class="font-semibold">Government Offices</h4>
-        <p class="text-sm text-zinc-600">Visitor guidance, ticketing & queue systems.</p>
-      </div>
-    </div>
-    <div class="flex items-start space-x-4">
-      <div class="text-3xl">🏥</div>
-      <div>
-        <h4 class="font-semibold">Hospitals & Clinics</h4>
-        <p class="text-sm text-zinc-600">Wayfinding, check-in & companionship.</p>
-      </div>
-    </div>
-    <div class="flex items-start space-x-4">
-      <div class="text-3xl">🎓</div>
-      <div>
-        <h4 class="font-semibold">Universities & Schools</h4>
-        <p class="text-sm text-zinc-600">Registration & robotics education platform.</p>
-      </div>
-    </div>
-    <div class="flex items-start space-x-4">
-      <div class="text-3xl">🏢</div>
-      <div>
-        <h4 class="font-semibold">Corporate Lobbies</h4>
-        <p class="text-sm text-zinc-600">AI-powered reception & info desk support.</p>
-      </div>
-    </div>
-    <div class="flex items-start space-x-4">
-      <div class="text-3xl">☕</div>
-      <div>
-        <h4 class="font-semibold">Restaurants & Majlis</h4>
-        <p class="text-sm text-zinc-600">Arabic coffee serving & table-side service.</p>
-      </div>
-    </div>
-    <div class="flex items-start space-x-4">
-      <div class="text-3xl">🖼️</div>
-      <div>
-        <h4 class="font-semibold">Events & Exhibitions</h4>
-        <p class="text-sm text-zinc-600">Engaging assistant & visitor interaction.</p>
-      </div>
-    </div>
-    <div class="flex items-start space-x-4">
-      <div class="text-3xl">🏦</div>
-      <div>
-        <h4 class="font-semibold">Banks & Telecom</h4>
-        <p class="text-sm text-zinc-600">Queue-ticket support & helpdesk info.</p>
-      </div>
-    </div>
-    <div class="flex items-start space-x-4">
-      <div class="text-3xl">🧓</div>
-      <div>
-        <h4 class="font-semibold">Elderly & Special Needs</h4>
-        <p class="text-sm text-zinc-600">Social interaction & gentle guidance.</p>
-      </div>
-    </div>
-    <div class="flex items-start space-x-4">
-      <div class="text-3xl">🛍️</div>
-      <div>
-        <h4 class="font-semibold">Shop Attendant</h4>
-        <p class="text-sm text-zinc-600">Welcome customers & recommend products.</p>
-      </div>
-    </div>
-  </div>
+    </main>
 
-  <!-- Modules -->
-<div class="mx-auto max-w-6xl grid gap-8 sm:grid-cols-2 lg:grid-cols-4 px-6">
+        <footer class="text-center py-8 text-xs text-zinc-500">
+            © 2025 The GuideOn Project&nbsp;· All rights reserved
+        </footer>
 
-  <!-- Category 1: Hospitality & Service Attachments -->
-  <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
-    <h3 class="text-lg font-semibold mb-2 text-brand">Hospitality Attachments</h3>
-    <p class="text-sm text-zinc-400">
-      Arabic coffee dispensers, tray modules, cup holders & heating compartments — ideal for majlis, receptions, and events.
-    </p>
-  </div>
-
-  <!-- Category 2: Ticketing & Integration Systems -->
-  <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
-    <h3 class="text-lg font-semibold mb-2 text-brand">Queue & Ticketing Systems</h3>
-    <p class="text-sm text-zinc-400">
-      Integrate with queue ticket printers, visitor ID scanners, and CRM dashboards — perfect for banks, telecoms & government.
-    </p>
-  </div>
-
-  <!-- Category 3: Guidance & Interactive Display -->
-  <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
-    <h3 class="text-lg font-semibold mb-2 text-brand">Smart Display Interfaces</h3>
-    <p class="text-sm text-zinc-400">
-      Large screens or tablets with multi-language content, gesture interaction & maps — for hospitals, exhibitions & museums.
-    </p>
-  </div>
-
-  <!-- Category 4: Education & Research Attachments -->
-  <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
-    <h3 class="text-lg font-semibold mb-2 text-brand">Education & AI Modules</h3>
-    <p class="text-sm text-zinc-400">
-      Teaching-ready platforms with ROS2, AI vision, voice integration & hardware access — ideal for schools and labs.
-    </p>
-  </div>
-
-</div>
-
-
-  <!-- CTA -->
-  <div class="text-center mt-12">
-    <a href="contact/index.html"
-       class="inline-block bg-brand/90 text-zinc-900 font-semibold px-8 py-3 rounded-md hover:bg-brand">
-       Talk to us about your build →
-    </a>
-  </div>
-</section>
-<!-- Team -->
-<section class="py-16 bg-zinc-900/60">
-  <h2 class="text-center text-3xl font-bold text-brand mb-10">Meet the Team</h2>
-<div class="flex flex-wrap justify-center gap-12 text-center max-w-5xl mx-auto px-6">
-    <div class="text-center">
-      <img style="display: inline;" src="static/img/team_ahmed.jpg"
-           alt="Ahmed Hassan"
-           class="w-40 h-40 rounded-full object-cover border-4 border-brand/60 mb-4" />
-      <h4 class="text-lg font-semibold">Ahmad Hasan</h4>
-      <p class="text-brand text-sm">Founder · Robotics Lead</p>
-      <p class="text-sm mt-2 max-w-xs">Designs, prototypes and integrates every drive motor &amp; ROS node.</p>
-    </div>
-    <div class="text-center">
-      <img  style="display: inline;" src="static/img/team_faisal.jpg"
-           alt="Faisal Kamal"
-           class="w-40 h-40 rounded-full object-cover border-4 border-brand/60 mb-4" />
-      <h4 class="text-lg font-semibold">Faisal Kamal</h4>
-      <p class="text-brand text-sm">Representative </p>
-      <p class="text-sm mt-2 max-w-xs">Connects NGOs &amp; brands with the right robot solution.</p>
-    </div>
-  </div>
-</section>
-<!-- ③ tiny helper script, just before </body> or inside index.html -->
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const vid = document.getElementById('showreelVid');
-  if (!vid) return;
-  const io = new IntersectionObserver(([e]) => {
-    if (e.isIntersecting) { vid.play().catch(()=>{}); io.disconnect(); }
-  }, { threshold: .25 });
-  io.observe(vid);
-});
-</script>
-
-
-</main>
-
-  <footer class="text-center py-8 text-xs text-zinc-500">
-    © 2025 The GuideOn Project&nbsp;· All rights reserved
-  </footer>
-
-  <script src="static/js/lightbox.js"></script>
-</body>
+        <script src="static/js/lightbox.js"></script>
+    </body>
 </html>

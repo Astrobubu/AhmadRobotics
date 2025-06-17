@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-zinc-950 text-zinc-200 scroll-smooth">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- NEW -->
+        <link rel="icon" href="../../static/img/favicon.ico" />
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+        <title>GuideOn-Desk – Ahmed Robotics</title>
+
+        <!-- Tailwind CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = { theme: { extend: { colors: { brand: "#00e0ff" } } } };
+        </script>
+    </head>
+    <body class="font-sans">
+        <!-- Header -->
+        <header class="bg-zinc-900/90 backdrop-blur sticky top-0 z-50" x-data="{ open:false }">
+            <!-- Alpine state -->
+            <div class="mx-auto max-w-7xl flex items-center justify-between px-6 py-4">
+                <!-- logo icon only -->
+                <a href="../../index.html">
+                    <img src="../../static/img/logo.png" alt="The GuideOn Project" class="h-10 w-10" />
+                </a>
+                <a href="../../index.html">
+                    <span class="text-brand text-2xl drop-shadow-md">
+                        The GuideOn Project
+                    </span>
+                </a>
+                <!-- hamburger button -->
+                <button @click="open=!open" class="sm:hidden text-brand focus:outline-none" aria-label="Toggle navigation">
+                    <!-- 3-bar icon -->
+                    <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+
+                <!-- desktop nav -->
+                <nav class="hidden sm:flex space-x-6 text-sm">
+                    <a href="../../about/index.html" class="hover:text-brand">About</a>
+                    <a href="../../contact/index.html" class="hover:text-brand">Contact</a>
+                </nav>
+            </div>
+
+            <!-- mobile menu -->
+            <nav x-show="open" x-transition.opacity.duration.200ms class="sm:hidden bg-zinc-900/95 backdrop-blur px-6 pb-4 space-y-2 text-sm">
+                <a href="../../about/index.html" class="block py-2 border-b border-zinc-800 hover:text-brand">About</a>
+                <a href="../../contact/index.html" class="block py-2 hover:text-brand">Contact</a>
+            </nav>
+        </header>
+
+        <main>
+
+<section>
+    <div class="mx-auto max-w-6xl grid gap-10 lg:grid-cols-2 px-6 py-14">
+        <!-- Hero image -->
+        <img src="../../static/img/robots/guideon-desk/01.jpg" alt="GuideOn-Desk" class="w-full h-auto rounded-lg shadow-lg" />
+
+        <!-- Text -->
+        <div>
+            <h2 class="text-3xl font-bold text-brand">GuideOn-Desk</h2>
+            <p class="mt-2 text-zinc-400">Stationary greeter – the top half of GuideOn</p>
+            <p class="mt-4"><strong>Status:</strong> Concept design • Pre-order</p>
+            <div class="prose prose-invert max-w-none mt-6">
+            <p><strong>Guideon-Desk</strong> keeps everything that matters—animated face,
+            dual gesture arms and screens, <b>but</b> drops the drive base, making it
+            the perfect fixed greeter for counters, lobbies or ticket windows.</p>
+
+            <h3 class="text-lg font-semibold mt-4 mb-1">Why&nbsp;Guideon-Desk?</h3>
+            <ul class="list-disc ml-6 space-y-1">
+              <li>Heavy weighted base with lockable casters for fast positioning.</li>
+              <li><b>Optional</b> anchor-plate if you want it permanently bolted down.</li>
+              <li>Same Persona-Engine AI (Arabic + English) as full GuideOn.</li>
+              <li>6-8 hour battery or it can runs 24 / 7 on mains power.</li>
+              <li>Can be split into 2-3 parts for easy transport.</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold mt-4 mb-2">Conversational&nbsp;AI suite</h3>
+            <ul class="list-disc ml-6 space-y-1">
+            <li><strong>Persona-Engine v1</strong> – OpenAI GPT-4 Turbo backend with real-time vector-search memory.</li>
+            <li><strong>Full multilingual support</strong> – understands &amp; speaks <em>Modern Standard Arabic</em> and <em>English</em> natively; auto-detects language mid-conversation.</li>
+            <li>Emotion-mapped TTS: 4 voice fonts (friendly, formal, playful, sarcastic).</li>
+            <li>On-device session log → fine-tunes dialogue for higher engagement.</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold mt-4 mb-2">Human + gesture interaction</h3>
+            <ul class="list-disc ml-6 space-y-1">
+            <li>LED face with many emotion morph targets.</li>
+            <li>Gesture arms (optional fixed-arm kit for -33.3 % cost).</li>
+            <li>Depth-aware audience sizing &amp; heat-map; greets only approaching visitors.</li>
+            </ul>
+
+        </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery -->
+<section class="bg-zinc-900/40 py-8">
+    <h3 class="text-center text-2xl font-semibold text-brand mb-8">Gallery</h3>
+    <div class="mx-auto max-w-5xl grid gap-4 sm:grid-cols-2 lg:grid-cols-3 px-4">
+        
+        <img src="../../static/img/robots/guideon-desk/01.jpg" alt="" class="w-full h-32 sm:h-40 object-cover rounded-md cursor-pointer hover:opacity-80 lightboxable" />
+        
+        <img src="../../static/img/robots/guideon-desk/02.jpg" alt="" class="w-full h-32 sm:h-40 object-cover rounded-md cursor-pointer hover:opacity-80 lightboxable" />
+        
+        <img src="../../static/img/robots/guideon-desk/03.jpg" alt="" class="w-full h-32 sm:h-40 object-cover rounded-md cursor-pointer hover:opacity-80 lightboxable" />
+        
+        <img src="../../static/img/robots/guideon-desk/04.jpg" alt="" class="w-full h-32 sm:h-40 object-cover rounded-md cursor-pointer hover:opacity-80 lightboxable" />
+        
+        <img src="../../static/img/robots/guideon-desk/05.jpg" alt="" class="w-full h-32 sm:h-40 object-cover rounded-md cursor-pointer hover:opacity-80 lightboxable" />
+        
+        <img src="../../static/img/robots/guideon-desk/06.jpg" alt="" class="w-full h-32 sm:h-40 object-cover rounded-md cursor-pointer hover:opacity-80 lightboxable" />
+        
+    </div>
+     
+
+     
+
+
+<section class="mt-14 py-10 bg-zinc-900/40">
+    
+    <div class="max-w-4xl mx-auto px-6">
+        <h3 class="text-xl sm:text-2xl font-semibold text-brand mb-6">
+            Customised Purposes / Use-Cases
+        </h3>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <div class="flex items-start space-x-4">
+                <div class="text-3xl">🏛️</div>
+                <div>
+                    <h4 class="font-semibold">Government Offices</h4>
+                    <p class="text-sm text-zinc-600">Ticketing & queue guidance.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+                <div class="text-3xl">🏦</div>
+                <div>
+                    <h4 class="font-semibold">Banks & Telecom</h4>
+                    <p class="text-sm text-zinc-600">Counter greeter with live queue status.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+                <div class="text-3xl">🏢</div>
+                <div>
+                    <h4 class="font-semibold">Corporate Lobbies</h4>
+                    <p class="text-sm text-zinc-600">Interactive receptionist & visitor badges.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+                <div class="text-3xl">🖼️</div>
+                <div>
+                    <h4 class="font-semibold">Events & Exhibitions</h4>
+                    <p class="text-sm text-zinc-600">Booth attraction & FAQ assistant.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+                <div class="text-3xl">🏥</div>
+                <div>
+                    <h4 class="font-semibold">Hospitals & Clinics</h4>
+                    <p class="text-sm text-zinc-600">Wayfinding & patient check-in.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+                <div class="text-3xl">🎓</div>
+                <div>
+                    <h4 class="font-semibold">Universities & Schools</h4>
+                    <p class="text-sm text-zinc-600">Registration & orientation support.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+ 
+
+
+<!-- ── Call-to-Action: Order / Customise ── -->
+<section class="py-14 bg-zinc-950">
+    <div class="max-w-xl mx-auto text-center px-6">
+        <h3 class="text-2xl font-semibold text-brand mb-6">
+            Ready to order or customise your Guideon?
+        </h3>
+
+        <p class="text-zinc-300 mb-8">
+            Tell us what modules you need &mdash; gesture arms, Qahwa tank, multilingual persona &mdash; and we’ll build a quote in 24 h.
+        </p>
+
+        <a href="../../contact/index.html" class="inline-block bg-brand/90 text-zinc-900 font-semibold px-10 py-4 rounded-md hover:bg-brand shadow-lg">
+            Order / Customise&nbsp;Now →
+        </a>
+    </div>
+</section>
+
+
+<div class="text-center my-12">
+    <a href="../../index.html" class="text-brand hover:underline">← Back to creations</a>
+</div>
+</main>
+
+        <footer class="text-center py-8 text-xs text-zinc-500">
+            © 2025 The GuideOn Project&nbsp;· All rights reserved
+        </footer>
+
+        <script src="../../static/js/lightbox.js"></script>
+    </body>
+</html>
